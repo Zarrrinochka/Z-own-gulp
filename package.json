@@ -18,10 +18,13 @@
   "homepage": "",
   "devDependencies": {
     "browser-sync": "^2.26.14",
+    "del": "^6.0.0",
     "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
     "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^7.1.0",
     "gulp-sass": "^4.1.0",
     "gulp-uglify-es": "^2.0.0",
-    "jquerry": "0.0.1-security"
+    "jquery": "^3.6.0"
   }
 }
