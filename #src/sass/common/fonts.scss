@@ -1,15 +1,22 @@
-@font-face {
-  font-family: "Comfortaa";
-  src: url("../fonts/Comfortaa-Regular.ttf") format("ttf");
-  font-style: normal;
-  font-weight: 400;
-}
+// @font-face {
+//   font-family: "Comfortaa";
+//   src: url("../fonts/Comfortaa-Regular.ttf") format("ttf");
+//   font-style: normal;
+//   font-weight: 400;
+// }
+
+// @font-face {
+//   font-family: "Comfortaa";
+//   src: url("../fonts/Comfortaa-Medium.ttf") format("ttf");
+//   font-style: normal;
+//   font-weight: 500;
+// }
 
 @font-face {
-  font-family: "Comfortaa";
-  src: url("../fonts/Comfortaa-Medium.ttf") format("ttf");
+  font-family: 'Comfortaa';
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
+  src: local('Comfortaa'), local('Comfortaa-Regular'), url(http://themes.googleusercontent.com/static/fonts/comfortaa/v4/qLBu5CQmSMt1H43OiWJ77aCWcynf_cDxXwCLxiixG1c.ttf) format('truetype');
 }
 
 $Comfortaa: "Comfortaa", "Arial", sans-serif;

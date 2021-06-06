@@ -1,0 +1,23 @@
+// .menu {
+// }
+
+.menu__list {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+// .menu__item {
+// }
+
+.menu__link {
+      /*text*/
+      font-family: $Comfortaa;
+      color: $white;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 20px;
+      font-weight: bold;
+}
