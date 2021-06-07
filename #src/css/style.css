@@ -41,18 +41,19 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  padding-top: 25vh;
+  padding-left: 8vh;
+  padding-right: 8vh;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
-  padding-top: 130px; }
+      justify-content: space-around; }
 
 .portfolio-item {
-  width: 25vw;
-  height: 15vw;
+  width: 35vh;
+  height: 20vh;
   border: 3px dashed #d7d2ce;
-  background-color: rgba(215, 210, 206, 0.5); }
-  .portfolio-item:not(:last-child) {
-    margin-right: 25px;
-    margin-bottom: 25px; }
+  background-color: rgba(215, 210, 206, 0.5);
+  margin-bottom: 25px;
+  margin-right: 25px; }
 
 .visually-hidden {
   position: absolute;

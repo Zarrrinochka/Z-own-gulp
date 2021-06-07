@@ -37,20 +37,19 @@
 .portfolio-items {
   display: flex;
   flex-wrap: wrap;
+  padding-top: 25vh;
+  padding-left: 8vh;
+  padding-right: 8vh;
   justify-content: space-around;
-  padding-top: 130px;
 }
 
 .portfolio-item {
-  width: 25vw;
-  height: 15vw;
+  width: 35vh;
+  height: 20vh;
   border: 3px dashed $light-gray;
   background-color: $light-gray50;
-
-  &:not(:last-child)  {
-    margin-right: 25px;
-    margin-bottom: 25px;
-  }
+  margin-bottom: 25px;
+  margin-right: 25px;
 }
 
 .visually-hidden {
