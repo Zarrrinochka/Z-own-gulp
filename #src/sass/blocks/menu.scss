@@ -1,5 +1,14 @@
-// .menu {
-// }
+.header,
+.menu,
+.menu__list,
+.menu__item,
+.menu__link {
+    background-color: transparent;
+}
+
+.header {
+    position: fixed;
+}
 
 .menu__list {
     display: flex;
@@ -28,9 +37,12 @@
         //background-image: url("../img/around.svg");
         //background-image: url("../img/around-bold.svg");
         //background-image: url("../img/around-bold2.svg");
-        background-image: url("../img/around-bold3.svg");
+        //background-image: url("../img/around-bold3.svg");
+        background-image: url("../img/around-bold4.svg");
         background-repeat: no-repeat;
         background-size: contain;
         background-position: 0;
+        /*text*/
+        color: $light-gray;
     }
 }

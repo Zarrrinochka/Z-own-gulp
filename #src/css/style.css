@@ -13,12 +13,46 @@
   margin: 0 auto;
   min-height: 100vh; }
 
-.back-img {
-  background-image: url("../img/Z-html.png"), url("../img/background-desk.png");
+.back-img,
+.back-img2,
+.back-img3 {
   background-repeat: no-repeat;
-  background-size: 30vh, cover;
-  background-position: center, 0 0;
   min-height: 100vh; }
+
+.back-img2,
+.back-img3 {
+  background-size: cover;
+  background-position: 0 0; }
+
+.back-img {
+  background-image: url("../img/Z-html.png"), url("../img/zarina-frondend.svg"), url("../img/background-desk.png");
+  background-size: 300px, 481px, cover;
+  background-position: center, center, 0 0; }
+
+.back-img2 {
+  background-image: url("../img/winter.jpg"); }
+
+.back-img3 {
+  background-image: url("../img/zharki.jpg"); }
+
+.portfolio-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-top: 130px; }
+
+.portfolio-item {
+  width: 25vw;
+  height: 15vw;
+  border: 3px dashed #d7d2ce;
+  background-color: rgba(215, 210, 206, 0.5); }
+  .portfolio-item:not(:last-child) {
+    margin-right: 25px;
+    margin-bottom: 25px; }
 
 .visually-hidden {
   position: absolute;
@@ -73,6 +107,16 @@ a:hover {
 ul li {
   list-style: none; }
 
+.header,
+.menu,
+.menu__list,
+.menu__item,
+.menu__link {
+  background-color: transparent; }
+
+.header {
+  position: fixed; }
+
 .menu__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -95,7 +139,9 @@ ul li {
   padding-left: 40px;
   padding-right: 40px; }
   .menu__link:hover {
-    background-image: url("../img/around-bold3.svg");
+    background-image: url("../img/around-bold4.svg");
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: 0; }
+    background-position: 0;
+    /*text*/
+    color: #d7d2ce; }
