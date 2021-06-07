@@ -5,19 +5,32 @@
     display: flex;
     justify-content: space-around;
     width: 100%;
-    padding-top: 20px;
-    padding-bottom: 20px;
 }
 
 // .menu__item {
 // }
 
 .menu__link {
-      /*text*/
-      font-family: $Comfortaa;
-      color: $white;
-      text-align: center;
-      text-transform: uppercase;
-      font-size: 20px;
-      font-weight: bold;
+    /*text*/
+    font-family: $Comfortaa;
+    color: $white;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    /**/
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+
+    &:hover {
+        //background-image: url("../img/around.svg");
+        //background-image: url("../img/around-bold.svg");
+        //background-image: url("../img/around-bold2.svg");
+        background-image: url("../img/around-bold3.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 0;
+    }
 }
