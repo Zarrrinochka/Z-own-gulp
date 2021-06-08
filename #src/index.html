@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <body>
 
@@ -17,17 +17,17 @@
             <ul class="menu__list">
                 <li class="menu__item">
                     <a class="menu__link" href="#">
-                        Пункт 1
+                        Z-frontend
                     </a>
                 </li>
                 <li class="menu__item">
                     <a class="menu__link" href="#.html">
-                        Пункт 2
+                        Портфолио
                     </a>
                 </li>
                 <li class="menu__item">
                     <a class="menu__link" href="#.html">
-                        Пункт 3
+                        Контакты
                     </a>
                 </li>
             </ul>
@@ -35,14 +35,17 @@
     </header>
 
     <main class="main">
-        <!-- <div class="wrapper"> -->
-        <div class="container">
-            <section class="back-img">
-                <h1 class="visually-hidden">Это я</h1>
-            </section>
-            <section class="back-img2">
 
-                <ul class="portfolio-items">
+        <section class="back-img">
+            <div class="container">
+                <h1 class="visually-hidden">Это я</h1>
+            </div>
+        </section>
+
+        <section class="back-img2">
+            <div class="container"> <!-- задаю высоту и центровку контента-->
+                <ul class="portfolio">
+                    <li class="portfolio-item"></li>
                     <li class="portfolio-item"></li>
                     <li class="portfolio-item"></li>
                     <li class="portfolio-item"></li>
@@ -52,13 +55,29 @@
                     <li class="portfolio-item"></li>
                     <li class="portfolio-item"></li>
                 </ul>
-            
-            </section>
-            
-            <section class="back-img3">
-            </section>
-        </div>
-        <!-- </div> для враппера-->
+            </div>
+        </section>
+
+        <section class="back-img3">
+            <div class="container"> <!-- задаю высоту и центровку контента-->
+                <ul class="contacts">
+                    <li class="contacts-item">
+                        <form class="form" action="" method="post">
+                            <fieldset class="">
+                                <legend class="">Напишите мне</legend>
+                                <label class="visually-hidden">text me</label>
+                                <textarea class="" name="comment" id="comment-field" rows="5"
+                                    placeholder="Хочу свой сайт!"></textarea>
+                            </fieldset>
+                        </form>
+                    </li>
+                    <li class="contacts-item"></li>
+                    <li class="contacts-item"></li>
+                    <li class="contacts-item"></li>
+                </ul>
+            </div>
+        </section>
+
     </main>
 
     <footer></footer>

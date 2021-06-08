@@ -1,11 +1,23 @@
-.wrapper {
-  min-height: 100%;
+
+/*Полезно*/
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
 }
 
 .container {
   margin: 0 auto;
-  min-height: 100vh;
+  max-width: 80vw;
 }
+
+/*локальные стили*/
 
 .back-img,
 .back-img2,
@@ -34,36 +46,36 @@
   background-image: url("../img/zharki.jpg");
 }
 
-.portfolio-items {
+.portfolio,
+.contacts {
   display: flex;
   flex-wrap: wrap;
-  padding-top: 25vh;
-  padding-left: 8vh;
-  padding-right: 8vh;
-  justify-content: space-around;
+  padding-top: 18vh;
+}
+
+.portfolio {
+  justify-content: space-between;
 }
 
 .portfolio-item {
-  width: 35vh;
-  height: 20vh;
+  width: 21vw;
+  height: 22vh;
   border: 3px dashed $light-gray;
   background-color: $light-gray50;
-  margin-bottom: 25px;
-  margin-right: 25px;
+  margin-bottom: 2vw;
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  border: 0;
-  clip: rect(0 0 0 0);
-}
+// .contacts {
+
+// }
+
+// .contacts-item {
+
+// }
+
 
 /*Обнуление*/
+
 * {
   padding: 0;
   margin: 0;
