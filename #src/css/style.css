@@ -22,26 +22,29 @@
   max-width: 80vw; }
 
 /*локальные стили*/
-.back-img,
-.back-img2,
-.back-img3 {
+.back-img1sec,
+.back-img2sec,
+.back-img3sec {
   background-repeat: no-repeat;
   min-height: 100vh; }
 
-.back-img2,
-.back-img3 {
+.back-img2sec,
+.back-img3sec {
   background-size: cover;
   background-position: 0 0; }
 
-.back-img {
+.back-img1sec {
   background-image: url("../img/Z-html.png"), url("../img/zarina-frondend.svg"), url("../img/background-desk.png");
   background-size: 300px, 481px, cover;
   background-position: center, center, 0 0; }
+  @media (min-width: 320px) and (max-width: 425px) {
+    .back-img1sec {
+      background-size: 50vw, 80vw, cover; } }
 
-.back-img2 {
+.back-img2sec {
   background-image: url("../img/winter.jpg"); }
 
-.back-img3 {
+.back-img3sec {
   background-image: url("../img/zharki.jpg"); }
 
 .portfolio,
@@ -58,6 +61,11 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   overflow: overlay; }
+  @media (min-width: 320px) and (max-width: 425px) {
+    .portfolio {
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; } }
 
 .portfolio-item {
   min-width: 255px;
@@ -136,10 +144,7 @@ ul li {
   font-size: 20px;
   font-weight: bold;
   /**/
-  padding-top: 40px;
-  padding-bottom: 40px;
-  padding-left: 40px;
-  padding-right: 40px; }
+  padding: 4vw; }
   .menu__link:hover {
     background-image: url("../img/around-bold4.svg");
     background-repeat: no-repeat;

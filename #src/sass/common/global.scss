@@ -1,4 +1,3 @@
-
 /*Полезно*/
 
 .visually-hidden {
@@ -19,30 +18,34 @@
 
 /*локальные стили*/
 
-.back-img,
-.back-img2,
-.back-img3 {
+.back-img1sec,
+.back-img2sec,
+.back-img3sec {
   background-repeat: no-repeat;
   min-height: 100vh;
 }
 
-.back-img2,
-.back-img3 {
+.back-img2sec,
+.back-img3sec {
   background-size: cover;
   background-position: 0 0;
 }
 
-.back-img {
+.back-img1sec {
   background-image: url("../img/Z-html.png"), url("../img/zarina-frondend.svg"), url("../img/background-desk.png");
   background-size: 300px, 481px, cover;
   background-position: center, center, 0 0;
+
+  @media (min-width: $mobile-s-width) and (max-width: $mobile-l-width) {
+    background-size: 50vw, 80vw, cover;
+  }
 }
 
-.back-img2 {
+.back-img2sec {
   background-image: url("../img/winter.jpg");
 }
 
-.back-img3 {
+.back-img3sec {
   background-image: url("../img/zharki.jpg");
 }
 
@@ -56,6 +59,10 @@
 .portfolio {
   justify-content: space-between;
   overflow: overlay;
+
+  @media (min-width: $mobile-s-width) and (max-width: $mobile-l-width) {
+    justify-content: center;
+  }
 }
 
 .portfolio-item {
@@ -68,7 +75,7 @@
   margin-bottom: 2vw;
 
   &:not(:nth-child(3n)),
-  &:not(:last-child){
+  &:not(:last-child) {
     margin-right: 1vw;
   }
 }
@@ -80,7 +87,6 @@
 // .contacts-item {
 
 // }
-
 
 /*Обнуление*/
 
