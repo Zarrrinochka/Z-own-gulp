@@ -1,9 +1,10 @@
 @charset "UTF-8";
 @font-face {
-  font-family: 'Comfortaa';
+  font-family: 'Pangolin';
+  src: url("/fonts/Pangolin-Regular.woff2") format("woff2"), url("/fonts/Pangolin-Regular.woff") format("woff");
+  font-weight: normal;
   font-style: normal;
-  font-weight: 400;
-  src: local("Comfortaa"), local("Comfortaa-Regular"), url(http://themes.googleusercontent.com/static/fonts/comfortaa/v4/qLBu5CQmSMt1H43OiWJ77aCWcynf_cDxXwCLxiixG1c.ttf) format("truetype"); }
+  font-display: swap; }
 
 /*1200px;*/
 /*Полезно*/
@@ -37,7 +38,7 @@
   background-image: url("../img/Z-html.png"), url("../img/zarina-frondend.svg"), url("../img/background-desk.png");
   background-size: 300px, 481px, cover;
   background-position: center, center, 0 0; }
-  @media (min-width: 320px) and (max-width: 425px) {
+  @media (min-width: 320px) and (max-width: 654px) {
     .back-img1sec {
       background-size: 50vw, 80vw, cover; } }
 
@@ -61,7 +62,7 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   overflow: overlay; }
-  @media (min-width: 320px) and (max-width: 425px) {
+  @media (min-width: 320px) and (max-width: 654px) {
     .portfolio {
       -webkit-box-pack: center;
           -ms-flex-pack: center;
@@ -137,7 +138,7 @@ ul li {
 
 .menu__link {
   /*text*/
-  font-family: "Comfortaa", "Arial", sans-serif;
+  font-family: "Pangolin", "Arial", sans-serif;
   color: #ffffff;
   text-align: center;
   text-transform: uppercase;

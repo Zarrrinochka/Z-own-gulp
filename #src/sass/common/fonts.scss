@@ -1,22 +1,10 @@
-// @font-face {
-//   font-family: "Comfortaa";
-//   src: url("../fonts/Comfortaa-Regular.ttf") format("ttf");
-//   font-style: normal;
-//   font-weight: 400;
-// }
-
-// @font-face {
-//   font-family: "Comfortaa";
-//   src: url("../fonts/Comfortaa-Medium.ttf") format("ttf");
-//   font-style: normal;
-//   font-weight: 500;
-// }
+$Pangolin: "Pangolin", "Arial", sans-serif;
 
 @font-face {
-  font-family: 'Comfortaa';
+  font-family: 'Pangolin';
+  src: url('/fonts/Pangolin-Regular.woff2') format('woff2'),
+      url('/fonts/Pangolin-Regular.woff') format('woff');
+  font-weight: normal;
   font-style: normal;
-  font-weight: 400;
-  src: local('Comfortaa'), local('Comfortaa-Regular'), url(http://themes.googleusercontent.com/static/fonts/comfortaa/v4/qLBu5CQmSMt1H43OiWJ77aCWcynf_cDxXwCLxiixG1c.ttf) format('truetype');
+  font-display: swap;
 }
-
-$Comfortaa: "Comfortaa", "Arial", sans-serif;
