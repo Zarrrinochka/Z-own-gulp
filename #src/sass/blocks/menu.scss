@@ -17,20 +17,19 @@
 // .menu__item {
 // }
 
-.menu__link {
+.menu__link, 
+.form-text-me {
     /*text*/
-    font-family: $Pangolin;
-    color: $white;
-    text-align: center;
-    text-transform: uppercase;
+    font-family: $Pangolin;  
+}
+
+.menu__link {
     font-size: 20px;
+    text-transform: uppercase;
+    padding: $desktop-rullers; 
     font-weight: bold;
-    /**/
-    // padding-top: 40px;
-    // padding-bottom: 40px;
-    // padding-left: 40px;
-    // padding-right: 40px;
-    padding: $desktop-rullers;
+    text-align: center;
+    color: $white;
 
     &:hover {
         background-image: url("../img/around-bold4.svg");
@@ -40,4 +39,14 @@
         /*text*/
         color: $light-gray;
     }
+}
+
+.form-first {
+    background-color: $light-gray50;
+    width: 100%;
+}
+
+.form-text-me {
+    font-size: 14px;
+    text-align: left;
 }

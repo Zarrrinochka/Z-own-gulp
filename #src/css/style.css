@@ -6,7 +6,6 @@
   font-style: normal;
   font-display: swap; }
 
-/*1200px;*/
 /*Полезно*/
 .visually-hidden {
   position: absolute;
@@ -20,33 +19,38 @@
 
 .container {
   margin: 0 auto;
-  max-width: 80vw; }
+  max-width: 70vw; }
 
 /*локальные стили*/
 .back-img1sec,
 .back-img2sec,
 .back-img3sec {
-  background-repeat: no-repeat;
   min-height: 100vh; }
-
-.back-img2sec,
-.back-img3sec {
-  background-size: cover;
-  background-position: 0 0; }
 
 .back-img1sec {
   background-image: url("../img/Z-html.png"), url("../img/zarina-frondend.svg"), url("../img/background-desk.png");
   background-size: 300px, 481px, cover;
-  background-position: center, center, 0 0; }
+  background-position: center, center, 0 0;
+  background-repeat: no-repeat; }
   @media (min-width: 320px) and (max-width: 654px) {
     .back-img1sec {
       background-size: 50vw, 80vw, cover; } }
 
 .back-img2sec {
-  background-image: url("../img/winter.jpg"); }
-
-.back-img3sec {
-  background-image: url("../img/zharki.jpg"); }
+  position: relative;
+  z-index: -1;
+  background-color: rgba(255, 255, 255, 0.5); }
+  .back-img2sec::before, .back-img2sec::after {
+    position: absolute;
+    z-index: -1; }
+  .back-img2sec::before {
+    top: -1px;
+    left: 0;
+    content: url("../img/frame1.svg"); }
+  .back-img2sec::after {
+    bottom: 0;
+    right: 0;
+    content: url("../img/frame2.svg"); }
 
 .portfolio,
 .contacts {
@@ -55,28 +59,39 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding-top: 18vh; }
+  padding-top: 19vh; }
 
 .portfolio {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  overflow: overlay; }
+  overflow: overlay;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
   @media (min-width: 320px) and (max-width: 654px) {
     .portfolio {
       -webkit-box-pack: center;
           -ms-flex-pack: center;
               justify-content: center; } }
+  @media (min-width: 768px) and (max-width: 1125px) {
+    .portfolio {
+      -ms-flex-pack: distribute;
+          justify-content: space-around; } }
 
 .portfolio-item {
+  width: 17vw;
+  /*деформируется ширина */
+  height: 11vw;
   min-width: 255px;
   /*без min ширина уменьшается*/
   min-height: 155px;
   border: 3px dashed #d7d2ce;
   background-color: rgba(215, 210, 206, 0.5);
   margin-bottom: 2vw; }
-  .portfolio-item:not(:nth-child(3n)), .portfolio-item:not(:last-child) {
-    margin-right: 1vw; }
+  @media (min-width: 654px) and (max-width: 1125px) {
+    .portfolio-item {
+      margin-right: 1vw; } }
+  @media (min-width: 1125px) {
+    .portfolio-item:not(:nth-of-type(3n)) {
+      margin-right: 1vw; } }
 
 /*Обнуление*/
 * {
@@ -136,16 +151,18 @@ ul li {
   display: -ms-flexbox;
   display: flex; }
 
-.menu__link {
+.menu__link,
+.form-text-me {
   /*text*/
-  font-family: "Pangolin", "Arial", sans-serif;
-  color: #ffffff;
-  text-align: center;
-  text-transform: uppercase;
+  font-family: "Pangolin", "Arial", sans-serif; }
+
+.menu__link {
   font-size: 20px;
+  text-transform: uppercase;
+  padding: 3vw;
   font-weight: bold;
-  /**/
-  padding: 4vw; }
+  text-align: center;
+  color: #ffffff; }
   .menu__link:hover {
     background-image: url("../img/around-bold4.svg");
     background-repeat: no-repeat;
@@ -153,3 +170,11 @@ ul li {
     background-position: 0;
     /*text*/
     color: #d7d2ce; }
+
+.form-first {
+  background-color: rgba(215, 210, 206, 0.5);
+  width: 100%; }
+
+.form-text-me {
+  font-size: 14px;
+  text-align: left; }
