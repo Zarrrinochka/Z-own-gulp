@@ -41,7 +41,7 @@
   z-index: -1;
   background-color: rgba(255, 255, 255, 0.5); }
   .back-img2sec::before, .back-img2sec::after {
-    position: absolute;
+    position: fixed;
     z-index: -1; }
   .back-img2sec::before {
     top: -1px;
