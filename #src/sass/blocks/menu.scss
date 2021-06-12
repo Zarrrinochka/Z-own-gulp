@@ -17,27 +17,29 @@
 // .menu__item {
 // }
 
-.menu__link, 
+.menu__link,
 .form-text-me {
     /*text*/
-    font-family: $Pangolin;  
+    font-family: $Pangolin;
 }
 
 .menu__link {
     font-size: 20px;
     text-transform: uppercase;
-    padding: $desktop-rullers; 
+    padding: $desktop-rullers;
     font-weight: bold;
     text-align: center;
-    color: $white;
+    color: $green;
+    cursor: pointer;
+    background: linear-gradient(90deg, transparent, $green, transparent) bottom/var(--d, 0) 3px no-repeat;
+    transition: 0.5s;
 
     &:hover {
-        background-image: url("../img/around-bold4.svg");
+        //background-image: url("../img/around-bold4.svg");
         background-repeat: no-repeat;
-        background-size: contain;
-        background-position: 0;
-        /*text*/
-        color: $light-gray;
+        background-position: bottom;
+        font-size: 24px;
+        --d: 100%;
     }
 }
 

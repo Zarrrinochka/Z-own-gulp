@@ -28,9 +28,9 @@
   min-height: 100vh; }
 
 .back-img1sec {
-  background-image: url("../img/Z-html.png"), url("../img/zarina-frondend.svg"), url("../img/background-desk.png");
-  background-size: 300px, 481px, cover;
-  background-position: center, center, 0 0;
+  background-image: url("../img/Z-html.png"), url("../img/zarina-frondend.svg"), url("../img/cloud.png"), url("../img/background-desk.png");
+  background-size: 300px, 481px, 94vw, cover;
+  background-position: center, center, -365px -187px, 0 0;
   background-repeat: no-repeat; }
   @media (min-width: 320px) and (max-width: 654px) {
     .back-img1sec {
@@ -159,17 +159,22 @@ ul li {
 .menu__link {
   font-size: 20px;
   text-transform: uppercase;
-  padding: 3vw;
+  padding: 2vw;
   font-weight: bold;
   text-align: center;
-  color: #ffffff; }
+  color: #08903E;
+  cursor: pointer;
+  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(#08903E), to(transparent)) bottom/var(--d, 0) 3px no-repeat;
+  background: -o-linear-gradient(left, transparent, #08903E, transparent) bottom/var(--d, 0) 3px no-repeat;
+  background: linear-gradient(90deg, transparent, #08903E, transparent) bottom/var(--d, 0) 3px no-repeat;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s; }
   .menu__link:hover {
-    background-image: url("../img/around-bold4.svg");
     background-repeat: no-repeat;
-    background-size: contain;
-    background-position: 0;
-    /*text*/
-    color: #d7d2ce; }
+    background-position: bottom;
+    font-size: 24px;
+    --d: 100%; }
 
 .form-first {
   background-color: rgba(215, 210, 206, 0.5);
