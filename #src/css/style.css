@@ -173,7 +173,7 @@ ul li {
   .menu__link:hover {
     background-repeat: no-repeat;
     background-position: bottom;
-    font-size: 24px;
+    font-size: 22px;
     --d: 100%; }
 
 .form-first {
