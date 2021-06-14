@@ -1,4 +1,4 @@
-const { src, dest, watch, parallel } = require("gulp"); /*я сборщик*/
+const { src, dest, watch, parallel, series } = require("gulp"); /*я сборщик*/
 const scss = require("gulp-sass");                      /*Sass plugin for Gulp.*/
 const autoprefixer = require("gulp-autoprefixer");      /*догадайся с трёх раз*/
 const browserSync = require("browser-sync").create();   
@@ -45,4 +45,4 @@ function clean() {
 };
 exports.clean = clean;   
 
-exports.default = parallel(styles, watcher, browsersync); /*команда gulp */
+exports.default = series(clean, parallel(styles, watcher, browsersync)); /*команда gulp */

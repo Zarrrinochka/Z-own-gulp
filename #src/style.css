@@ -78,14 +78,13 @@
 
 .portfolio-item {
   width: 17vw;
-  /*деформируется ширина */
   height: 11vw;
   min-width: 255px;
-  /*без min ширина уменьшается*/
   min-height: 155px;
   border: 3px dashed #d7d2ce;
   background-color: rgba(215, 210, 206, 0.5);
-  margin-bottom: 2vw; }
+  margin-bottom: 2vw;
+  text-align: center; }
   @media (min-width: 654px) and (max-width: 1125px) {
     .portfolio-item {
       margin-right: 1vw; } }
