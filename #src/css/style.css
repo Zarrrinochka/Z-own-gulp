@@ -6,6 +6,54 @@
   font-style: normal;
   font-display: swap; }
 
+.header,
+.menu,
+.menu__list,
+.menu__item,
+.menu__link {
+  background-color: transparent; }
+
+.header {
+  position: fixed; }
+
+.menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.menu__link,
+.form-text-me {
+  /*text*/
+  font-family: "Pangolin", "Arial", sans-serif; }
+
+.menu__link {
+  font-size: 20px;
+  text-transform: uppercase;
+  padding: 2vw;
+  font-weight: bold;
+  text-align: center;
+  color: #08903E;
+  cursor: pointer;
+  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(#08903E), to(transparent)) bottom/var(--d, 0) 3px no-repeat;
+  background: -o-linear-gradient(left, transparent, #08903E, transparent) bottom/var(--d, 0) 3px no-repeat;
+  background: linear-gradient(90deg, transparent, #08903E, transparent) bottom/var(--d, 0) 3px no-repeat;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s; }
+  .menu__link:hover {
+    background-repeat: no-repeat;
+    background-position: bottom;
+    font-size: 22px;
+    --d: 100%; }
+
+.form-first {
+  background-color: rgba(215, 210, 206, 0.5);
+  width: 100%; }
+
+.form-text-me {
+  font-size: 14px;
+  text-align: left; }
+
 /*Полезно*/
 .visually-hidden {
   position: absolute;
@@ -135,51 +183,3 @@ a:hover {
 
 ul li {
   list-style: none; }
-
-.header,
-.menu,
-.menu__list,
-.menu__item,
-.menu__link {
-  background-color: transparent; }
-
-.header {
-  position: fixed; }
-
-.menu__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
-
-.menu__link,
-.form-text-me {
-  /*text*/
-  font-family: "Pangolin", "Arial", sans-serif; }
-
-.menu__link {
-  font-size: 20px;
-  text-transform: uppercase;
-  padding: 2vw;
-  font-weight: bold;
-  text-align: center;
-  color: #08903E;
-  cursor: pointer;
-  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(#08903E), to(transparent)) bottom/var(--d, 0) 3px no-repeat;
-  background: -o-linear-gradient(left, transparent, #08903E, transparent) bottom/var(--d, 0) 3px no-repeat;
-  background: linear-gradient(90deg, transparent, #08903E, transparent) bottom/var(--d, 0) 3px no-repeat;
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s; }
-  .menu__link:hover {
-    background-repeat: no-repeat;
-    background-position: bottom;
-    font-size: 22px;
-    --d: 100%; }
-
-.form-first {
-  background-color: rgba(215, 210, 206, 0.5);
-  width: 100%; }
-
-.form-text-me {
-  font-size: 14px;
-  text-align: left; }
