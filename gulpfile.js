@@ -1,10 +1,11 @@
 const { src, dest, watch, parallel, series } = require("gulp"); /*я сборщик*/
 const scss = require("gulp-sass");                      /*Sass plugin for Gulp.*/
 const autoprefixer = require("gulp-autoprefixer");      /*догадайся с трёх раз*/
-const browserSync = require("browser-sync").create();   
+const browserSync = require("browser-sync").create();
+const del = require('del');
+const pug = require('gulp-pug');
 
-
-function styles() {
+function scss2css() {
     return src("#src/style.scss") /* найти путь к файлу с которым нужно работать */
         .pipe(scss()) /*что с ним сделать - чз gulp-sass преврати scss в css*/
         .pipe(autoprefixer({
@@ -12,15 +13,15 @@ function styles() {
             grid: true
         }))
         .pipe(dest("#src/"))  /*что с ним сделать - destнуть в эту папку*/
-        .pipe(browserSync.stream()) /*что с ним сделать - перезапустить браузер*/
+        
 }
-exports.styles = styles;  /*завершение, чтоб заработало*/
+exports.scss2css = scss2css;  /*завершение, чтоб заработало*/
 
 
 // Определяем логику работы Browsersync
 function browsersync() {
     browserSync.init({ // Инициализация Browsersync
-        server: { baseDir: "#src/" }, // Указываем папку сервера
+        server: { baseDir: "#src" }, // Указываем папку сервера
         notify: false, // Отключаем уведомления
         online: true // Режим работы: true или false
     })
@@ -30,19 +31,29 @@ exports.browsersync = browsersync;
 
 
 function watcher() {
-    watch(["#src/*.scss"], styles); /*следи за фаилами по этому пути, при из изменении запускай styles*/
-    watch(["#src/*.html"]).on('change', browserSync.reload);
+    watch(["#src/*.scss"], scss2css); /*следи за фаилами по этому пути, при из изменении запускай scss2css*/
+    watch(["#src/*.pug"]).on('change', browserSync.reload);
 }
 exports.watcher = watcher;
 
 
-const del = require('del');
-
 function clean() {
-  return del([
-    "#src/style.css" /* gulp clean удалит этот фаил*/
-  ]);
+    return del([
+        "#src/style.css", /* gulp clean удалит этот фаил*/
+        "#src/*.html"
+    ]);
 };
-exports.clean = clean;   
+exports.clean = clean;
 
-exports.default = series(clean, parallel(styles, watcher, browsersync)); /*команда gulp */
+
+function pugToHtml() {
+    return src('#src/*.pug')
+        .pipe(pug({
+            pretty: true
+        }))
+        .pipe(dest('#src'));
+}
+exports.pugToHtml = pugToHtml; /*gulp pugToHtml*/
+
+
+exports.default = series(clean, parallel( pugToHtml, scss2css, watcher, browsersync)); /*команда gulp */
