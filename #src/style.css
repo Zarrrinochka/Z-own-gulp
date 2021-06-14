@@ -25,7 +25,7 @@
 .back-img1sec,
 .back-img2sec,
 .back-img3sec {
-  min-height: 100vh; }
+  height: 100vh; }
 
 .back-img1sec {
   background-image: url("Z-html.png"), url("zarina-frondend.svg"), url("background-desk-with-cloud.png");

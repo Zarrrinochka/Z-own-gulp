@@ -24,7 +24,11 @@ function scss2css() {
             grid: true
         }))
         .pipe(dest("#src/"))  /*что с ним сделать - destнуть в эту папку*/
-        
+        .pipe(
+            browserSync.reload({
+              stream: true
+            })
+          );
 }
 exports.scss2css = scss2css;  /*завершение, чтоб заработало*/
 
@@ -34,7 +38,12 @@ function pugToHtml() {
         .pipe(pug({
             pretty: true
         }))
-        .pipe(dest('#src'));
+        .pipe(dest('#src'))
+        .pipe(
+            browserSync.reload({
+              stream: true
+            })
+          );
 }
 exports.pugToHtml = pugToHtml; /*gulp pugToHtml*/
 
@@ -42,9 +51,9 @@ exports.pugToHtml = pugToHtml; /*gulp pugToHtml*/
 // Определяем логику работы Browsersync
 function browsersync() {
     browserSync.init({ // Инициализация Browsersync
-        server: { baseDir: "#src" }, // Указываем папку сервера
-        notify: false, // Отключаем уведомления
-        online: true // Режим работы: true или false
+        server: { baseDir: "./#src", directory: true}, // Указываем папку сервера
+        //notify: false, // Отключаем уведомления
+        //online: true // Режим работы: true или false
     })
 }
 // Экспортируем функцию browsersync() как таск browsersync. Значение после знака = это имеющаяся функция.
@@ -52,9 +61,9 @@ exports.browsersync = browsersync;
 
 
 function watcher() {
-    watch(["#src/*.scss"], scss2css); /*следи за фаилами по этому пути, при из изменении запускай scss2css*/
-    watch(["#src/*.pug"]).on('change', browserSync.reload);
+    watch(["./#src/scss2css.scss"], scss2css); /*следи за фаилами по этому пути, при из изменении запускай scss2css*/
+    watch(["./#src/pugToHtml.pug"], pugToHtml);
 }
 exports.watcher = watcher;
 
-exports.default = series(clean, parallel( pugToHtml, scss2css, watcher, browsersync)); /*команда gulp */
+exports.default = series(clean, pugToHtml, scss2css, parallel( watcher, browsersync)); /*команда gulp */
