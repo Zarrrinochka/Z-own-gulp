@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @font-face {
   font-family: 'Pangolin';
-  src: url("/fonts/Pangolin-Regular.woff2") format("woff2"), url("/fonts/Pangolin-Regular.woff") format("woff");
+  src: url("/Pangolin-Regular.woff2") format("woff2"), url("/Pangolin-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap; }
@@ -28,7 +28,7 @@
   min-height: 100vh; }
 
 .back-img1sec {
-  background-image: url("../img/Z-html.png"), url("../img/zarina-frondend.svg"), url("../img/background-desk-with-cloud.png");
+  background-image: url("Z-html.png"), url("zarina-frondend.svg"), url("background-desk-with-cloud.png");
   background-size: 300px, 481px, cover;
   background-position: center, center, 0 0;
   background-repeat: no-repeat; }
@@ -46,11 +46,11 @@
   .back-img2sec::before {
     top: -1px;
     left: 0;
-    content: url("../img/frame1.svg"); }
+    content: url("frame1.svg"); }
   .back-img2sec::after {
     bottom: 0;
     right: 0;
-    content: url("../img/frame2.svg"); }
+    content: url("frame2.svg"); }
 
 .portfolio,
 .contacts {
@@ -173,7 +173,7 @@ ul li {
   .menu__link:hover {
     background-repeat: no-repeat;
     background-position: bottom;
-    font-size: 24px;
+    font-size: 22px;
     --d: 100%; }
 
 .form-first {

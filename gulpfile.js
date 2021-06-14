@@ -1,18 +1,17 @@
-const { src, dest, watch, parallel, series } = require("gulp");
-const autoprefixer = require("gulp-autoprefixer");
-const browserSync = require("browser-sync").create();
-const scss = require("gulp-sass");
-
+const { src, dest, watch, parallel } = require("gulp"); /*я сборщик*/
+const scss = require("gulp-sass");                      /*Sass plugin for Gulp.*/
+const autoprefixer = require("gulp-autoprefixer");      /*догадайся с трёх раз*/
+const browserSync = require("browser-sync").create();   
 
 
 function styles() {
-    return src("#src/sass/style.scss") /* найти путь к файлу с которым нужно работать */
+    return src("#src/style.scss") /* найти путь к файлу с которым нужно работать */
         .pipe(scss()) /*что с ним сделать - чз gulp-sass преврати scss в css*/
         .pipe(autoprefixer({
             overrideBrowserslist: ["last 10 version"],
             grid: true
         }))
-        .pipe(dest("#src/css"))  /*что с ним сделать - destнуть в указанную папку*/
+        .pipe(dest("#src/"))  /*что с ним сделать - destнуть в эту папку*/
         .pipe(browserSync.stream()) /*что с ним сделать - перезапустить браузер*/
 }
 exports.styles = styles;  /*завершение, чтоб заработало*/
@@ -31,11 +30,19 @@ exports.browsersync = browsersync;
 
 
 function watcher() {
-    watch(["#src/sass/**/*.scss"], styles); /*следи за фаилами по этому пути, при из изменении запускай styles*/
+    watch(["#src/*.scss"], styles); /*следи за фаилами по этому пути, при из изменении запускай styles*/
     watch(["#src/*.html"]).on('change', browserSync.reload);
-    //watch(["#src/js/script.js"], scripts);
 }
 exports.watcher = watcher;
 
 
-exports.default = parallel(styles, watcher, browsersync);
+const del = require('del');
+
+function clean() {
+  return del([
+    "#src/style.css" /* gulp clean удалит этот фаил*/
+  ]);
+};
+exports.clean = clean;   
+
+exports.default = parallel(styles, watcher, browsersync); /*команда gulp */

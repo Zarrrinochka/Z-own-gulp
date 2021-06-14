@@ -1,3 +1,31 @@
+$Pangolin: "Pangolin", "Arial", sans-serif;
+
+@font-face {
+  font-family: 'Pangolin';
+  src: url('/Pangolin-Regular.woff2') format('woff2'),
+      url('/Pangolin-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Viewports
+$mobile-s-width: 320px;
+$mobile-l-width: 654px;
+$tablet-width: 768px;
+$desktop-width: 1125px;
+//rullers
+$mobile-rullers: 20px;
+$tablet-rullers: 30px;
+$desktop-rullers: 2vw;
+//colors
+$white: #ffffff;
+$white50: rgba(255, 255, 255, 0.5);
+$black: #000000;
+$light-gray: #d7d2ce;
+$light-gray50: rgba(215, 210, 206, 0.5);
+$green: #08903E;
+
 /*Полезно*/
 
 .visually-hidden {
@@ -25,7 +53,7 @@
 }
 
 .back-img1sec {
-  background-image: url("../img/Z-html.png"), url("../img/zarina-frondend.svg"), url("../img/background-desk-with-cloud.png");
+  background-image: url("Z-html.png"), url("zarina-frondend.svg"), url("background-desk-with-cloud.png");
   background-size: 300px, 481px, cover;
     background-position: center, center, 0 0;
   background-repeat: no-repeat;
@@ -49,13 +77,13 @@
   &::before {
     top: -1px;
     left: 0;
-    content: url("../img/frame1.svg");
+    content: url("frame1.svg");
   }
 
   &::after {
     bottom: 0;
     right: 0;
-    content: url("../img/frame2.svg");
+    content: url("frame2.svg");
   }
 }
 
@@ -155,4 +183,59 @@ a:hover {
 
 ul li {
   list-style: none;
+}
+
+.header,
+.menu,
+.menu__list,
+.menu__item,
+.menu__link {
+    background-color: transparent;
+}
+
+.header {
+    position: fixed;
+}
+
+.menu__list {
+    display: flex;
+}
+
+// .menu__item {
+// }
+
+.menu__link,
+.form-text-me {
+    /*text*/
+    font-family: $Pangolin;
+}
+
+.menu__link {
+    font-size: 20px;
+    text-transform: uppercase;
+    padding: $desktop-rullers;
+    font-weight: bold;
+    text-align: center;
+    color: $green;
+    cursor: pointer;
+    background: linear-gradient(90deg, transparent, $green, transparent) bottom/var(--d, 0) 3px no-repeat;
+    transition: 0.5s;
+
+    &:hover {
+        //background-image: url("../img/around-bold4.svg");
+        background-repeat: no-repeat;
+        background-position: bottom;
+        font-size: 22px;
+        --d: 100%;
+    }
+}
+
+.form-first {
+    background-color: $light-gray50;
+    width: 100%;
+}
+
+.form-text-me {
+    font-size: 14px;
+    text-align: left;
 }
