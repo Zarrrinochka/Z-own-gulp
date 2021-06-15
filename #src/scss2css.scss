@@ -1,9 +1,80 @@
+/*Обнуление*/
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:focus,
+:active,
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside,
+a,
+section,
+img {
+  display: block;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+/*Полезно*/
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 70vw;
+}
+
+
+/*переменные*/
+
 $Pangolin: "Pangolin", "Arial", sans-serif;
 
 @font-face {
-  font-family: 'Pangolin';
-  src: url('/Pangolin-Regular.woff2') format('woff2'),
-      url('/Pangolin-Regular.woff') format('woff');
+  font-family: "Pangolin";
+  src: url("/Pangolin-Regular.woff2") format("woff2"), url("/Pangolin-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -24,25 +95,7 @@ $white50: rgba(255, 255, 255, 0.5);
 $black: #000000;
 $light-gray: #d7d2ce;
 $light-gray50: rgba(215, 210, 206, 0.5);
-$green: #08903E;
-
-/*Полезно*/
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  border: 0;
-  clip: rect(0 0 0 0);
-}
-
-.container {
-  margin: 0 auto;
-  max-width: 70vw;
-}
+$green: #08903e;
 
 /*локальные стили*/
 
@@ -55,7 +108,7 @@ $green: #08903E;
 .back-img1sec {
   background-image: url("Z-html.png"), url("zarina-frondend.svg"), url("background-desk-with-cloud.png");
   background-size: 300px, 481px, cover;
-    background-position: center, center, 0 0;
+  background-position: center, center, 0 0;
   background-repeat: no-repeat;
 
   @media (min-width: $mobile-s-width) and (max-width: $mobile-l-width) {
@@ -108,7 +161,7 @@ $green: #08903E;
 }
 
 .portfolio-item {
-  width: 17vw; 
+  width: 17vw;
   height: 11vw;
   min-width: 255px;
   min-height: 155px;
@@ -127,63 +180,17 @@ $green: #08903E;
     }
   }
 }
-// .contacts {
 
-// }
 
-// .contacts-item {
-
-// }
-
-/*Обнуление*/
-
-* {
-  padding: 0;
-  margin: 0;
-  border: 0;
+.contacts-item textarea {
+  width: $desktop-width;
+  border: 1px solid $green;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-:focus,
-:active,
-a:focus,
-a:active {
-  outline: none;
-}
-
-nav,
-footer,
-header,
-aside,
-a,
-section,
-img {
-  display: block;
-}
-
-input,
-button,
-textarea {
-  font-family: inherit;
-}
-
-button {
-  cursor: pointer;
-}
-
-a,
-a:visited,
-a:hover {
-  text-decoration: none;
-}
-
-ul li {
-  list-style: none;
+.contacts-item textarea,
+.contacts-item legend  {
+  padding-left: 1vw;
+  padding-right: 1vw;
 }
 
 .header,
@@ -191,52 +198,48 @@ ul li {
 .menu__list,
 .menu__item,
 .menu__link {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 .header {
-    position: fixed;
+  position: fixed;
 }
 
 .menu__list {
-    display: flex;
+  display: flex;
 }
 
-// .menu__item {
-// }
 
 .menu__link,
 .form-text-me {
-    /*text*/
-    font-family: $Pangolin;
+  font-family: $Pangolin;
 }
 
 .menu__link {
-    font-size: 20px;
-    text-transform: uppercase;
-    padding: $desktop-rullers;
-    font-weight: bold;
-    text-align: center;
-    color: $green;
-    cursor: pointer;
-    background: linear-gradient(90deg, transparent, $green, transparent) bottom/var(--d, 0) 3px no-repeat;
-    transition: 0.5s;
+  font-size: 20px;
+  text-transform: uppercase;
+  padding: $desktop-rullers;
+  font-weight: bold;
+  text-align: center;
+  color: $green;
+  cursor: pointer;
+  background: linear-gradient(90deg, transparent, $green, transparent) bottom/var(--d, 0) 3px no-repeat;
+  transition: 0.5s;
 
-    &:hover {
-        //background-image: url("../img/around-bold4.svg");
-        background-repeat: no-repeat;
-        background-position: bottom;
-        font-size: 22px;
-        --d: 100%;
-    }
+  &:hover {
+    background-repeat: no-repeat;
+    background-position: bottom;
+    font-size: 22px;
+    --d: 100%;
+  }
 }
 
 .form-first {
-    background-color: $light-gray50;
-    width: 100%;
+  background-color: $light-gray50;
+  width: 100%;
 }
 
 .form-text-me {
-    font-size: 14px;
-    text-align: left;
+  font-size: 14px;
+  text-align: left;
 }
