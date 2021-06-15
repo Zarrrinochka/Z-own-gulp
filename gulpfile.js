@@ -4,6 +4,7 @@ const autoprefixer = require("gulp-autoprefixer");      /*догадайся с 
 const browserSync = require("browser-sync").create();
 const del = require('del');
 const pug = require('gulp-pug');
+const rename = require('gulp-rename');
 
 function clean() {
     return del([
@@ -35,6 +36,7 @@ function pugToHtml() {
         .pipe(pug({
             pretty: true
         }))
+        .pipe(rename("index.html"))
         .pipe(dest("#src/"))
         .pipe(
             browserSync.reload({
