@@ -5,8 +5,6 @@ const browserSync = require("browser-sync").create();
 const del = require('del');
 const pug = require('gulp-pug');
 
-
-
 function clean() {
     return del([
         "#src/style.css", /* gulp clean удалит этот фаил*/
@@ -15,10 +13,9 @@ function clean() {
 };
 exports.clean = clean;
 
-
 function scss2css() {
     return src("#src/style.scss") /* найти путь к файлу с которым нужно работать */
-        .pipe(scss()) /*что с ним сделать - чз gulp-sass преврати scss в css*/
+        .pipe(scss()) /*чз gulp-sass преврати scss в css*/
         .pipe(autoprefixer({
             overrideBrowserslist: ["last 10 version"],
             grid: true
@@ -38,7 +35,7 @@ function pugToHtml() {
         .pipe(pug({
             pretty: true
         }))
-        .pipe(dest('#src'))
+        .pipe(dest("#src/"))
         .pipe(
             browserSync.reload({
               stream: true
@@ -51,7 +48,7 @@ exports.pugToHtml = pugToHtml; /*gulp pugToHtml*/
 // Определяем логику работы Browsersync
 function browsersync() {
     browserSync.init({ // Инициализация Browsersync
-        server: { baseDir: "./#src", directory: true}, // Указываем папку сервера
+        server: { baseDir: "#src/", directory: true}, // Указываем папку сервера
         //notify: false, // Отключаем уведомления
         //online: true // Режим работы: true или false
     })
@@ -62,7 +59,7 @@ exports.browsersync = browsersync;
 
 function watcher() {
     watch(["./#src/scss2css.scss"], scss2css); /*следи за фаилами по этому пути, при из изменении запускай scss2css*/
-    watch(["./#src/pugToHtml.pug"], pugToHtml);
+    watch(["./#src/pug2Html.pug"], pugToHtml);
 }
 exports.watcher = watcher;
 

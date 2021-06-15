@@ -47,12 +47,12 @@ main.main
       // задаю высоту и центровку контента
       ul.contacts
         li.contacts-item
-          form.form(action='', method='post')
-            .form-first
+          form.form(action='', method='post').form-first
               fieldset.form-text-me
-                legend Напишите мне
-                label.visually-hidden text me
-                textarea#comment-field(name='comment', rows='5', placeholder='Хочу свой сайт!')
+              legend Напишите мне 
+              label.visually-hidden text me
+              textarea#comment-field(name='comment', rows='5', placeholder='Хочу свой сайт!')
+          button.button.form-send(type=submit) Отправить заявку
         li.contacts-item
         li.contacts-item
         li.contacts-item
