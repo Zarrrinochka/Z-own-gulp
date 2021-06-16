@@ -21,5 +21,8 @@
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-sass": "^4.1.0"
+  },
+  "dependencies": {
+    "gulp-pug": "^5.0.0"
   }
 }
