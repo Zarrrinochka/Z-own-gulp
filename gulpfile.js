@@ -12,16 +12,24 @@ function styles() {
             overrideBrowserslist: ["last 10 version"],
             grid: true
         }))
-        .pipe(dest("#src/css"))  /*что с ним сделать - destнуть в указанную папку*/
+        .pipe(dest("dist/css"))  /*что с ним сделать - destнуть в указанную папку*/
         .pipe(browserSync.stream()) /*что с ним сделать - перезапустить браузер*/
 }
 exports.styles = styles;  /*завершение, чтоб заработало*/
 
 
+function html() {
+    return src("#src/*.html")
+        .pipe(dest("dist"))
+        .pipe(browserSync.stream()) 
+}
+exports.html = html;
+
+
 // Определяем логику работы Browsersync
 function browsersync() {
     browserSync.init({ // Инициализация Browsersync
-        server: { baseDir: "#src/" }, // Указываем папку сервера
+        server: { baseDir: "dist/" }, // Указываем папку сервера
         notify: false, // Отключаем уведомления
         online: true // Режим работы: true или false
     })
@@ -31,11 +39,29 @@ exports.browsersync = browsersync;
 
 
 function watcher() {
-    watch(["#src/sass/**/*.scss"], styles); /*следи за фаилами по этому пути, при из изменении запускай styles*/
-    watch(["#src/*.html"]).on('change', browserSync.reload);
+    watch(["#src/**/*.scss"], styles); /*следи за фаилами по этому пути, при из изменении запускай styles*/
+    watch(["#src/*.html"], html).on('change', browserSync.reload);
     //watch(["#src/js/script.js"], scripts);
 }
 exports.watcher = watcher;
 
+// Copy
 
-exports.default = parallel(styles, watcher, browsersync);
+function copy() {
+    src([
+        "#src/img/**/*.{png,jpg,svg}",
+        "#src/fonts/*.{woff2,woff}",
+        "#src/*.ico",
+        "#src/img/**/*.svg"
+    ], {
+        base: "#src"
+    })
+        .pipe(dest("dist"))
+}
+
+exports.copy = copy;
+
+
+
+
+exports.default = parallel(html, copy, styles, watcher, browsersync);
