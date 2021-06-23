@@ -5,8 +5,8 @@ var gulp = require("gulp"),
     scss = require("gulp-sass"),
     sourcemaps = require("gulp-sourcemaps"),
     browserSync = require("browser-sync").create(),
-    autoprefixer = require("gulp-autoprefixer");
-
+    autoprefixer = require("gulp-autoprefixer"),
+    del = require("del");
 
 gulp.task("pug", function () {
     return gulp.src("src/pug/pages/*.pug")
@@ -39,6 +39,10 @@ gulp.task("copyfont", function () {
     .pipe(gulp.dest("build/fonts"))
 });
 
+gulp.task("del", function () {
+    return del(["./build/"])
+});
+
 gulp.task("watch", function () {
     gulp.watch("src/pug/pages/**/*.pug", gulp.series("pug")),
     gulp.watch("src/static/sass/**/*.scss", gulp.series("styles"))
@@ -51,5 +55,5 @@ gulp.task("serve", function () {
     browserSync.watch("build", browserSync.reload);
 });
 
-gulp.task("default", gulp.series( "copyimg", "copyfont", gulp.parallel("pug", "styles"), gulp.parallel("watch", "serve")
+gulp.task("default", gulp.series( "del", "copyimg", "copyfont", gulp.parallel("pug", "styles"), gulp.parallel("watch", "serve")
 ));
