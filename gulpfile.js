@@ -28,11 +28,21 @@ gulp.task("styles", function () {
         .pipe(gulp.dest("build"))
 });
 
+
+gulp.task("copyimg", function () {
+    return gulp.src("src/static/img/*.{png,jpg,svg,ico}")
+    .pipe(gulp.dest("build/img"))
+});
+
+gulp.task("copyfont", function () {
+    return gulp.src("src/static/fonts/*.{woff,woff2}")
+    .pipe(gulp.dest("build/fonts"))
+});
+
 gulp.task("watch", function () {
     gulp.watch("src/pug/pages/**/*.pug", gulp.series("pug")),
     gulp.watch("src/static/sass/**/*.scss", gulp.series("styles"))
-}
-)
+});
 
 gulp.task("serve", function () {
     browserSync.init({ // Инициализация Browsersync
@@ -41,6 +51,5 @@ gulp.task("serve", function () {
     browserSync.watch("build", browserSync.reload);
 });
 
-gulp.task("default", gulp.series(
-    gulp.parallel("pug", "styles"), gulp.parallel("watch", "serve")
+gulp.task("default", gulp.series( "copyimg", "copyfont", gulp.parallel("pug", "styles"), gulp.parallel("watch", "serve")
 ));
