@@ -5,54 +5,39 @@
 .menu__list,
 .menu__item,
 .menu__link {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 .header {
-    position: fixed;
+  position: fixed;
 }
 
 .menu__list {
-    display: flex;
+  display: flex;
 }
 
 .menu__link,
 .form-text-me {
-    font-family: $Pangolin;
+  font-family: $Pangolin;
 }
 
 .menu__link {
-    font-size: 20px;
-    text-transform: uppercase;
-    padding: $desktop-rullers;
-    font-weight: bold;
-    text-align: center;
-    color: $green;
-    cursor: pointer;
-    background: linear-gradient(90deg, transparent, $green, transparent) bottom/var(--d, 0) 3px no-repeat;
-    transition: 0.5s;
+  font-size: 20px;
+  text-transform: uppercase;
+  padding: $desktop-rullers;
+  font-weight: bold;
+  text-align: center;
+  color: $green;
+  cursor: pointer;
+  background: linear-gradient(90deg, transparent, $green, transparent) bottom/var(--d, 0) 3px no-repeat;
+  transition: 0.5s;
 
-    &:hover {
-        background-repeat: no-repeat;
-        background-position: bottom;
-        font-size: 22px;
-        --d: 100%;
-    }
-}
-
-.form-first {
-    background-color: $light-gray50;
-    width: 70vw;
-}
-
-.form-text-me {
-    font-size: 14px;
-    text-align: left;
-    width: 70vw;
-}
-
-.text-me-textarea {
-  width: 70vw;
+  &:hover {
+    background-repeat: no-repeat;
+    background-position: bottom;
+    font-size: 22px;
+    --d: 100%;
+  }
 }
 
 .back-img1sec,
@@ -62,9 +47,10 @@
 }
 
 .back-img1sec {
-  background-image: url("../img/Z-html.png"), url("../img/zarina-frondend.svg"), url("../img/background-desk-with-cloud.png");
+  background-image: url("../img/Z-html.png"), url("../img/zarina-frondend.svg"),
+    url("../img/background-desk-with-cloud.png");
   background-size: 300px, 481px, cover;
-    background-position: center, center, 0 0;
+  background-position: center, center, 0 0;
   background-repeat: no-repeat;
 
   @media (min-width: $mobile-s-width) and (max-width: $mobile-l-width) {
@@ -73,10 +59,6 @@
 }
 
 .back-img2sec {
-  position: relative;
-  z-index: -1;
-  background-color: $white50;
-
   &::before,
   &::after {
     position: fixed;
@@ -96,16 +78,16 @@
   }
 }
 
-.portfolio,
-.contacts {
-  display: flex;
-  flex-wrap: wrap;
-  padding-top: 19vh;
+.back-img3sec {
+  padding-top: 13vw;
 }
 
 .portfolio {
   overflow: overlay;
   justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 19vh;
 
   @media (min-width: $mobile-s-width) and (max-width: $mobile-l-width) {
     justify-content: center;
@@ -125,6 +107,13 @@
   background-color: $light-gray50;
   margin-bottom: 2vw;
 
+  &:last-child {
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    padding-top: 2vw;
+  }
+
   @media (min-width: $mobile-l-width) and (max-width: $desktop-width) {
     margin-right: 1vw;
   }
@@ -134,4 +123,75 @@
       margin-right: 1vw;
     }
   }
+}
+
+.form-connection-wrapper {
+  border: 3px dashed $light-gray;
+  padding-top: 1.5vw;
+  padding-bottom: 1.5vw;
+  padding-left: 1.5vw;
+  padding-right: 1.5vw;
+}
+
+.form-connection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.form-connection input,
+.form-connection textarea {
+  min-height: 3vw;
+  border-bottom: 3px dashed $light-gray;
+
+  &:active,
+  &:focus {
+    box-shadow: inset 0 0 10px 5px rgba(3, 163, 67, 0.2);
+  }
+}
+
+.form-connection input {
+  text-align: center;
+}
+
+.form-connection textarea {
+  width: 66vw;
+  text-align: left;
+  padding-left: 0.2vw;
+  padding-top: 0.5vw;
+  margin-top: 0.5vw;
+}
+
+.form-connection-item {
+  &:last-child {
+    margin-top: 1.5vw;
+  }
+}
+
+.button-want {
+  background: $green;
+  padding: 0.5vw;
+  width: 11vw;
+  color: $white;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-family: "Pangolin";
+  margin-right: 0;
+  margin-left: auto;
+  margin-top: 2vw;
+
+  &:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    transform: translateY(1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.form-connection-item,
+.button-want,
+.text-want {
+  font-family: "Pangolin";
 }
