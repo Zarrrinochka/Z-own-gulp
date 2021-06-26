@@ -1,0 +1,28 @@
+.header {
+  position: fixed;
+  z-index: 10; //выше всех, если бльше нуля
+}
+
+.header-list {
+  display: flex;
+}
+
+.header-link {
+  font-family: $Pangolin;
+  font-size: 20px;
+  text-transform: uppercase;
+  padding: $desktop-rullers;
+  font-weight: bold;
+  text-align: center;
+  color: $green;
+  cursor: pointer;
+  background: linear-gradient(90deg, transparent, $green, transparent) bottom/var(--d, 0) 3px no-repeat;
+  transition: 0.5s;
+
+  &:hover {
+    background-repeat: no-repeat;
+    background-position: bottom;
+    font-size: 22px;
+    --d: 100%;
+  }
+}
