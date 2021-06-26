@@ -1,67 +1,73 @@
 doctype html
 html(lang="ru")
-    head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible" content="IE=edge")
-        meta(name="viewport" content="width=device-width, initial-scale=1.0")
-        title Document
-        link(rel='icon', type='image/x-icon', href='img/favicon.ico')
-        link(rel='stylesheet' href='style.css')
-    body
-        header.header
-            nav.menu
-                ul.menu__list
-                    li.menu__item
-                        a.menu__link(href='#') Z-frontend
-                    li.menu__item
-                        a.menu__link(href='#') Портфолио
-                    li.menu__item
-                        a.menu__link(href='#') Контакты
-        main.main
-            section.back-img1sec
-                div.container
-                    h1.visually-hidden Это я
-            section.back-img2sec 
-                div.container
-                    ul.portfolio
-                        li.portfolio-item
-                            a(href='')
-                        li.portfolio-item
-                            a(href='')
-                        li.portfolio-item
-                            a(href='')
-                        li.portfolio-item
-                            a(href='')
-                        li.portfolio-item
-                            a(href='')
-                        li.portfolio-item
-                            a(href='')
-                        li.portfolio-item
-                            a(href='')
-                        li.portfolio-item
-                            a(href='')
-                        li.portfolio-item 
-                            p.text-want Хочу себе такой же крутой сайт!
-                            a(href='')
-                                button.button-want(type="") Заказать
-            section.back-img3sec
-                div.container
-                    form.form-connection-wrapper(action='',method='post').form-first
-                        fieldset.form-connection
-                            legend.visually-hidden  Как с вами связаться
-                            div.form-connection-item 
-                                label(for='name') Ваше имя:
-                                input(id="name", type="text", name="name", required, placeholder='Иванов Иван Иванович')
-                            div.form-connection-item 
-                                label(for='email') E-mail:
-                                input(id="email" type='email', name='email', required, placeholder='pochta@gmail.com')
-                            div.form-connection-item 
-                                label(for='tel') Телефон:
-                                input(type='tel', name='tel', required, placeholder='8 (960) 900-60-90')
-                            div.form-connection-item 
-                                label(for='wishes') Ваши пожелания к сайту:
-                                textarea.text-me-textarea(id="wishes", name="wishes", type="text", rows="6", placeholder='Я хочу адаптивный стильный сайт')
-                        button.button-want(type="submit" id="order") Заказать
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		title Document
+		link(rel='icon' type='image/x-icon' href='img/favicon.ico')
+		link(rel='stylesheet' href='style.css')
+	body
+		header.header
+			nav
+				ul.header-list
+					li
+						a.header-link(href='#') Z-frontend
+					li
+						a.header-link(href='#') Портфолио
+					li
+						a.header-link(href='#') Контакты
+		main.main
+			section.block.parallax
+				h1.visually-hidden Это я
+				div.parallax__body
+					div.parallax__images
+						div.images-parallax__item
+							div.images-parallax__clouds
+						div.images-parallax__item
+							div.images-parallax__me
 
-        footer
-        script(src="/js/script.js")
+			section.content
+				div.container
+					div.sec2.block 
+						h2.visually-hidden Портфолио
+						ul.portfolio
+							li.portfolio-item
+								a(href='')
+							li.portfolio-item
+								a(href='')
+							li.portfolio-item
+								a(href='')
+							li.portfolio-item
+								a(href='')
+							li.portfolio-item
+								a(href='')
+							li.portfolio-item
+								a(href='')
+							li.portfolio-item
+								a(href='')
+							li.portfolio-item
+								a(href='')
+							li.portfolio-item 
+								p.text-want Хочу себе такой же крутой сайт!
+								a(href='')
+									button.button-want(type="") Заказать
+					div.sec3.block
+						form.form-connection-wrapper(action='' method='post').form-first
+							fieldset.form-connection
+								legend.visually-hidden  Как с вами связаться
+								div.form-connection-item 
+									label(for='name') Ваше имя:
+									input(id="name" type="text" name="name", required, placeholder='Иванов Иван Иванович')
+								div.form-connection-item 
+									label(for='email') E-mail:
+									input(id="email" type='email' name='email', required, placeholder='pochta@gmail.com')
+								div.form-connection-item 
+									label(for='tel') Телефон:
+									input(type='tel' name='tel', required, placeholder='8 (960) 900-60-90')
+								div.form-connection-item 
+									label(for='wishes') Ваши пожелания к сайту:
+									textarea.text-me-textarea(id="wishes" name="wishes" type="text" rows="6" placeholder='Я хочу адаптивный стильный сайт')
+							button.button-want(type="submit" id="order") Заказать
+		footer
+		script(src="/js/script.js")

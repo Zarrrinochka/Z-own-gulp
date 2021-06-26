@@ -39,6 +39,12 @@ gulp.task("copyfont", function () {
     .pipe(gulp.dest("build/fonts"))
 });
 
+gulp.task("copyjs", function () {
+    return gulp.src("src/static/js/*.js")
+    .pipe(gulp.dest("build/js"))
+});
+
+
 gulp.task("del", function () {
     return del(["./build/"])
 });
@@ -55,5 +61,5 @@ gulp.task("serve", function () {
     browserSync.watch("build", browserSync.reload);
 });
 
-gulp.task("default", gulp.series( "del", "copyimg", "copyfont", gulp.parallel("pug", "styles"), gulp.parallel("watch", "serve")
+gulp.task("default", gulp.series( "del", "copyimg", "copyfont", "copyjs", gulp.parallel("pug", "styles"), gulp.parallel("watch", "serve")
 ));
