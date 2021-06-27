@@ -1,7 +1,7 @@
-.header {
+.header-nav {
   position: fixed;
-  z-index: 10; //выше всех, если бльше нуля
-}
+  z-index: 6; //выше всех, если бльше нуля
+} 
 
 .header-list {
   display: flex;
@@ -19,7 +19,8 @@
   background: linear-gradient(90deg, transparent, $green, transparent) bottom/var(--d, 0) 3px no-repeat;
   transition: 0.5s;
 
-  &:hover {
+  &:hover,
+  &.active {
     background-repeat: no-repeat;
     background-position: bottom;
     font-size: 22px;

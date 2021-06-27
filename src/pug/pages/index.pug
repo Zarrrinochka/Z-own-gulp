@@ -8,11 +8,11 @@ html(lang="ru")
 		link(rel='icon' type='image/x-icon' href='img/favicon.ico')
 		link(rel='stylesheet' href='style.css')
 	body
-		header.header
-			nav
+		header
+			nav.header-nav
 				ul.header-list
 					li
-						a.header-link(href='#') Z-frontend
+						a.header-link.active(href='#') Z-frontend
 					li
 						a.header-link(href='#') Портфолио
 					li
@@ -28,9 +28,9 @@ html(lang="ru")
 							div.images-parallax__me
 						div.images-parallax__item
 							div.images-parallax__front
-			section.content
+			div.content
 				div.container
-					div.sec2.block 
+					section.sec2.block 
 						h2.visually-hidden Портфолио
 						ul.portfolio
 							li.portfolio-item
@@ -53,7 +53,7 @@ html(lang="ru")
 								p.text-want Хочу себе такой же крутой сайт!
 								a(href='')
 									button.button-want(type="") Заказать
-					div.sec3.block
+					section.sec3.block
 						form.form-connection-wrapper(action='' method='post').form-first
 							fieldset.form-connection
 								legend.visually-hidden  Как с вами связаться
