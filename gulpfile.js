@@ -61,5 +61,4 @@ gulp.task("serve", function () {
     browserSync.watch("build", browserSync.reload);
 });
 
-gulp.task("default", gulp.series( "del", "copyimg", "copyfont", "copyjs", gulp.parallel("pug", "styles"), gulp.parallel("watch", "serve")
-));
+gulp.task("default", gulp.series( "del", "copyimg", "copyfont", "copyjs", gulp.parallel("pug", "styles"), gulp.parallel("watch", "serve")));
