@@ -51,7 +51,8 @@ gulp.task("del", function () {
 
 gulp.task("watch", function () {
     gulp.watch("src/pug/pages/**/*.pug", gulp.series("pug")),
-    gulp.watch("src/static/sass/**/*.scss", gulp.series("styles"))
+    gulp.watch("src/static/sass/**/*.scss", gulp.series("styles")),
+    gulp.watch("src/static/js/*.js", gulp.series("copyjs"))
 });
 
 gulp.task("serve", function () {
