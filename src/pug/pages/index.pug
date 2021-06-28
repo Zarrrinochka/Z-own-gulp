@@ -17,7 +17,7 @@ html(lang="ru")
 						a.header-link(href='#') Портфолио
 					li
 						a.header-link(href='#') Контакты
-		main.main
+		main
 			section.block.parallax
 				h1.visually-hidden Это я
 				div.parallax__body
@@ -65,10 +65,11 @@ html(lang="ru")
 									input(id="email" type='email' name='email', required, placeholder='pochta@gmail.com')
 								div.form-connection-item 
 									label(for='tel') Телефон:
-									input(type='tel' name='tel', required, placeholder='8 (960) 900-60-90')
+									input(id="tel" type='tel' name='tel', required, placeholder='8 (960) 900-60-90')
 								div.form-connection-item 
 									label(for='wishes') Ваши пожелания к сайту:
-									textarea.text-me-textarea(id="wishes" name="wishes" type="text" rows="6" placeholder='Я хочу адаптивный стильный сайт')
+									textarea.text-me-textarea(id="wishes" name="wishes" type="text" rows="12" placeholder='Я хочу адаптивный стильный сайт!')
 							button.button-want(type="submit" id="order") Заказать
+					div.stick 
 		footer
 		script(src="/js/script.js")

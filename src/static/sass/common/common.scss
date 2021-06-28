@@ -1,1 +1,35 @@
-//
+.container {
+    margin: 0 auto;
+    max-width: 70vw;
+  }
+
+.block {
+    min-height: 100vh;
+}
+
+.button-want {
+    background: $green;
+    padding: 0.5vw;
+    width: 11vw;
+    color: $white;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-family: "Pangolin";
+    margin-top: 2vw;
+
+    &:hover {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        transition-duration: 0.5s;
+    }
+
+    &:active {
+        transform: translateY(1px);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.form-connection-item,
+.button-want,
+.text-want {
+    font-family: "Pangolin";
+}

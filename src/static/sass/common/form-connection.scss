@@ -1,28 +1,6 @@
-/*локальные стили*/
-.block {
-  min-height: 100vh;
-}
-
-// .parallax,
-// .back-img2sec,
-// .back-img3sec {
-
-// }
-
-//.parallax
-// @media (min-width: $mobile-s-width) and (max-width: $mobile-l-width) {
-//   background-size: 50vw, 80vw, cover;
-// }
-
-
-
-
 .sec3 {
-  padding-top: 13vw;
+  padding-top: 11vw;
 }
-
-
-
 
 .form-connection-wrapper {
   border: 3px dashed $light-gray;
@@ -30,12 +8,16 @@
   padding-bottom: 1.5vw;
   padding-left: 1.5vw;
   padding-right: 1.5vw;
+  width: 53vw;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .form-connection {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  width: 50vw;
 }
 
 .form-connection input,
@@ -54,7 +36,7 @@
 }
 
 .form-connection textarea {
-  width: 66vw;
+  width: 50vw;
   text-align: left;
   padding-left: 0.2vw;
   padding-top: 0.5vw;
@@ -62,36 +44,17 @@
 }
 
 .form-connection-item {
+  &:not(:last-child) {
+    width: 15vw;
+  }
+
   &:last-child {
     margin-top: 1.5vw;
   }
 }
 
-.button-want {
-  background: $green;
-  padding: 0.5vw;
-  width: 11vw;
-  color: $white;
-  font-size: 18px;
-  text-transform: uppercase;
-  font-family: "Pangolin";
+.form-connection-wrapper > button {
+  display: block;
   margin-right: 0;
   margin-left: auto;
-  margin-top: 2vw;
-
-  &:hover {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  }
-
-  &:active {
-    transform: translateY(1px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  }
 }
-
-.form-connection-item,
-.button-want,
-.text-want {
-  font-family: "Pangolin";
-}
-
