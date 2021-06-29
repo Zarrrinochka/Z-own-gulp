@@ -69,7 +69,11 @@ html(lang="ru")
 								div.form-connection-item 
 									label(for='wishes') Ваши пожелания к сайту:
 									textarea.text-me-textarea(id="wishes" name="wishes" type="text" rows="12" placeholder='Я хочу адаптивный стильный сайт!')
+								div.form-connection-item.chekbox-call
+									input.chekbox-call-inp(type="checkbox" name="call" id="call")
+									label(for="call") Просто позвоните мне
+									
 							button.button-want(type="submit" id="order") Заказать
 					div.stick 
-		footer
+		footer 
 		script(src="/js/script.js")

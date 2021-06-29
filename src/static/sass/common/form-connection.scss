@@ -1,5 +1,5 @@
 .sec3 {
-  padding-top: 11vw;
+  padding-top: 13vw;
 }
 
 .form-connection-wrapper {
@@ -44,11 +44,15 @@
 }
 
 .form-connection-item {
-  &:not(:last-child) {
+  &::nth-child(-n + 3) {
     width: 15vw;
   }
 
-  &:last-child {
+  &:nth-child(4) {
+    margin-top: 1.5vw;
+  }
+
+  &:nth-child(5) {
     margin-top: 1.5vw;
   }
 }
@@ -58,3 +62,19 @@
   margin-right: 0;
   margin-left: auto;
 }
+
+.chekbox-call {
+  display: flex;
+  justify-content: space-between;
+  width: 12vw;
+  align-items: center;
+  margin-top: 2vw;
+}
+
+// .chekbox-call.inp {
+//   &:hover, 
+//   &:active {
+//     background-color: transparent;
+//     box-shadow: transparent;
+//   }
+// }
