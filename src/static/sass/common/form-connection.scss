@@ -45,14 +45,14 @@
 
 .form-connection-item {
   &::nth-child(-n + 3) {
-    width: 15vw;
-  }
-
-  &:nth-child(4) {
-    margin-top: 1.5vw;
+    min-width: 15vw;
   }
 
   &:nth-child(5) {
+    margin-top: 1.5vw;
+  }
+
+  &:nth-child(6) {
     margin-top: 1.5vw;
   }
 }

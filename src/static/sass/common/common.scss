@@ -1,3 +1,23 @@
+.page-body {
+    position: relative;
+    margin-bottom: 10vh;
+
+    &::after {
+    background-image: url("../img/paper.png");
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    content: "";
+    position: absolute;
+    z-index: 2;
+    bottom: -5vh;
+    left: 78px;
+    width: 1434px;
+    height: 60px;
+
+    
+}
+}
+
 .container {
     margin: 0 auto;
     max-width: 70vw;
